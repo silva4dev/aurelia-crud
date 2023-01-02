@@ -1,0 +1,19 @@
+<template>
+  <div class="container p-3 mt-5">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group mb-3">
+            <label for="name">Nome:</label>
+            <input type="text" class="form-control" name="name" id="name" autocomplete="off" value.bind="productName"/>
+          </div>
+          <div class="form-group mb-3">
+            <label for="price">Preço:</label>
+            <input type="number" class="form-control" name="price" id="price" autocomplete="off" value.bind="productPrice"/>
+          </div>
+          <button click.delegate="updateProduct()" type="button" class="btn btn-success">Editar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,39 @@
+<template>
+  <div class="container p-3 mt-5">
+    <a class="btn btn-success" route-href="register-product">Cadastrar um produto</a>
+    <hr />
+    <div class="card">
+      <div class="card-body">
+        <table class="table table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr repeat.for="product of products">
+              <th scope="row">${product.id}</th>
+              <td>${product.name}</td>
+              <td>${product.price}</td>
+              <td>
+                <a class="btn btn-warning" route-href="route: edit-product; params.bind: {id: product.id}">
+                  Editar
+                </a>
+                <button
+                  click.delegate="deleteProduct(`${product.id}`)"
+                  type="button"
+                  class="btn btn-danger"
+                >
+                  Deletar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
